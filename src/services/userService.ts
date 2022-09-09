@@ -10,11 +10,19 @@ export class UserService {
 
   async saveUser(user: any): Promise<any> {
     return await axios
-      .post(this.baseURL, user)
+      .post(this.baseURL, { data: user })
       .then((response) => response.data);
   }
 
   async deleteUser(id: string): Promise<void> {
-    return await axios.delete(this.baseURL).then((response) => response.data);
+    return await axios
+      .delete(`${this.baseURL}/${id}`)
+      .then((response) => response.data);
+  }
+
+  async updateUser(id: number, user: any): Promise<any> {
+    return await axios
+      .put(`${this.baseURL}/${id}`, { data: user })
+      .then((response) => response.data);
   }
 }
