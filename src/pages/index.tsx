@@ -1,10 +1,25 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
+import type { NextPage } from "next";
+import { useEffect, useState } from "react";
+import { User } from "../interfaces/types";
+import { UserService } from "../services/userService";
 
 const Home: NextPage = () => {
-  return <div className="text-lg font-medium">Hola neztasdasdasd</div>;
-}
+  const [userList, setUserList] = useState<Array<User>>([]);
 
-export default Home
+  
+  useEffect(() => {
+    const userService = new UserService();
+    userService.getAllUser().then((data) => setUserList(data));
+    console.log(userService.getAllUser().then((data) =>console.log(data)));
+  }, []);
+  return (
+    <>
+      <div className="text-lg font-medium">Hola neztasdasdasd</div>
+      {userList.map((user,ind) => {
+        return <div key={ind} style={{color: "red"}}>{user.attributes.nombre}</div>;
+      })}
+    </>
+  );
+};
+
+export default Home;
