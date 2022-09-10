@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   // basePath: "data-curso",
-  assetPrefix: "/",
+  // assetPrefix: "/",
 };
 
 module.exports = nextConfig;
