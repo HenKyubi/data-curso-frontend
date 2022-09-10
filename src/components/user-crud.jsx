@@ -65,16 +65,25 @@ export default class UserCRUD extends Component {
   }
 
   componentDidMount() {
-    this.userService.getAllUser().then((data) => {
-      this.setState({
-        users: data.map((user) => {
-          const temporal = user.id;
-          const temporal2 = user.attributes;
-          temporal2.id = temporal;
-          return temporal2;
-        }),
-      });
-    });
+    this.userService
+      .getAllUser()
+      .then((data) => {
+        this.setState({
+          users: data.map((user) => {
+            const temporal = user.id;
+            const temporal2 = user.attributes;
+            temporal2.id = temporal;
+            return temporal2;
+          }),
+        });
+      })
+      .catch((error) =>
+        this.toast.show({
+          severity: "error",
+          summary: "Error",
+          detail: `${error}`,
+        })
+      );
   }
 
   save() {
