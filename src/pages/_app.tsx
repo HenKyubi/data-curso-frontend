@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="icon" href={"/favicon.png"} />
+        <link rel="icon" href={"/data-curso-frontend/favicon.png"} />
         <title>Data curso CRUD Users</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
