@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import * as animationData from "../../public/wellcome.json";
+import animationData from "../../public/wellcome.json";
 
 const Login = () => {
   const defaultOptions = {
