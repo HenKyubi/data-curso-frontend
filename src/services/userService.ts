@@ -1,7 +1,7 @@
 import axios from "axios";
 import { User } from "../interfaces/types";
 export class UserService {
-  baseURL: string = "http://localhost:1337/api/usuarios";
+  baseURL: string = "https://data-curso-backend.herokuapp.com/api/usuarios";
   async getAllUser(): Promise<Array<User>> {
     return await axios.get(this.baseURL).then((response) => response.data.data);
   }

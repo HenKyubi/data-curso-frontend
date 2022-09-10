@@ -5,15 +5,15 @@ import Head from "next/head";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import '../../styles/globals.css'
+import "../../styles/globals.css";
 import "../../styles/taildwind.css";
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={"/favicon.png"} />
         <title>Data curso CRUD Users</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -28,4 +28,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp
+export default MyApp;
