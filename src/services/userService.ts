@@ -1,8 +1,6 @@
 import axios from "axios";
-import { ResponseGetAllUsers } from "../interfaces/response-get-all-users";
 import { User } from "../interfaces/types";
 export class UserService {
-  // baseURL: string = "https://cohan-backend.herokuapp.com/api/";
   baseURL: string = "http://localhost:1337/api/usuarios";
   async getAllUser(): Promise<Array<User>> {
     return await axios.get(this.baseURL).then((response) => response.data.data);
